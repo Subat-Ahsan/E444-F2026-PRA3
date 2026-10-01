@@ -2,3 +2,6 @@
 
 This repo is a clone of
 https://github.com/miguelgrinberg/flasky
+
+## Example 3
+![alt text](image.png)
