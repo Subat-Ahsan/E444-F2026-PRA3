@@ -1,17 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}Hello {{ name }}{% endblock %}
-
 {% block page_content %}
 
-{% if name and email %}
-    <h1>Hello {{ name }}! Welcome to PRA3 Docker!</h1>
-    <p>Your UofT email is {{ email }}</p>
-    <p>Current Time: {{ time.strftime("%A, %B %d, %Y %I:%M %p") }}</p>
-{% else %}
-    <h1>Hello stranger!</h1>
-{% endif %}
-
+<h1>Welcome</h1>
 
 <form method="POST">
     {{ form.hidden_tag() }}
@@ -26,8 +17,9 @@
         {{ form.email(class="form-control") }}
     </div>
 
-    <div class="form-group">
-        {{ form.submit(class="btn btn-primary") }}
-    </div>
+    <br>
+
+    {{ form.submit(class="btn btn-primary") }}
 </form>
+
 {% endblock %}

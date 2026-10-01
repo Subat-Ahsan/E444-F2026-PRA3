@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<h1>Chatbot</h1>
+
+<div class="well" style="height: 400px; overflow-y: auto;">
+
+    {% for chat in messages %}
+        <p>
+            <strong>You:</strong> {{ chat.message }}
+        </p>
+
+        <p>
+            <strong>Bot:</strong> {{ chat.reply }}
+        </p>
+
+        <hr>
+    {% endfor %}
+
+</div>
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+        {{ form.message.label }}
+        {{ form.message(class="form-control") }}
+    </div>
+
+    <br>
+
+    {{ form.submit(class="btn btn-primary") }}
+</form>
+
+<a href="/logout" class="btn btn-danger">Logout</a>
+
+{% endblock %}
